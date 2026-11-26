@@ -1,6 +1,7 @@
 import { state, emit } from './state.js';
 
-const VIDEO_ID = 'TGgcC5xg9YI';
+const VIDEO_ID = 'WO7qdqdXeBU';
+const TRACK_TITLE = 'PHONECERT · Hoàng Dũng (Vietnamese Version)';
 export function createMusic() {
   const panel = document.querySelector('#music-panel');
   const button = document.querySelector('#music-toggle');
@@ -59,7 +60,7 @@ export function createMusic() {
         onReady() {
           ready = true;
           const frame = player.getIframe();
-          frame.title = 'SEE YOU AGAIN — Tyler, The Creator ft. Kali Uchis';
+          frame.title = TRACK_TITLE;
           frame.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
           frame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
           if (requested) start();
@@ -68,7 +69,7 @@ export function createMusic() {
           if (event.data === YT.PlayerState.PLAYING) {
             clearTimeout(blockedTimer);
             setPlaying(true);
-            status.textContent = 'SEE YOU AGAIN · Tyler, The Creator ft. Kali Uchis';
+            status.textContent = TRACK_TITLE;
           } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) setPlaying(false);
           else if (event.data === YT.PlayerState.BUFFERING) status.textContent = 'Đang tải nhạc…';
         },
