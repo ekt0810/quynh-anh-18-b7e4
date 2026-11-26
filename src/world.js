@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { state } from './state.js';
-import { palette, material, mesh, sphere, heart, star, tube } from './geometry.js';
+import { palette, material, mesh, sphere, star, tube } from './geometry.js';
 
 export function createWorld(canvas) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
@@ -79,14 +79,14 @@ export function createWorld(canvas) {
 
   const floating = [];
   const gold = material(palette.sand, { metalness: 0.25, roughness: 0.5 });
-  const blush = material(palette.forest, { metalness: 0.04 });
+  const accent = material(palette.forest, { metalness: 0.04 });
   const ornaments = [
-    [-2.25, 2.75, 0.2, 0.22, 'star'], [2.4, 2.65, 0.8, 0.24, 'heart'],
-    [-0.3, 4.2, -0.4, 0.18, 'star'], [0.8, 3.75, -0.8, 0.17, 'heart'],
-    [-3.0, 1.4, 0.6, 0.16, 'heart'], [3.0, 1.65, 0.3, 0.17, 'star'],
+    [-2.25, 2.75, 0.2, 0.22], [2.4, 2.65, 0.8, 0.16],
+    [-0.3, 4.2, -0.4, 0.18], [0.8, 3.75, -0.8, 0.12],
+    [-3.0, 1.4, 0.6, 0.12], [3.0, 1.65, 0.3, 0.17],
   ];
-  ornaments.forEach(([x, y, z, size, type], i) => {
-    const obj = type === 'star' ? star(size, gold, scene, [x, y, z]) : heart(size, blush, scene, [x, y, z]);
+  ornaments.forEach(([x, y, z, size], i) => {
+    const obj = star(size, i % 2 ? accent : gold, scene, [x, y, z]);
     floating.push({ obj, y, phase: i * 2 });
   });
 

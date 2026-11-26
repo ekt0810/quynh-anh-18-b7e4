@@ -3,7 +3,7 @@ import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import fontData from 'three/examples/fonts/helvetiker_bold.typeface.json';
 import { state } from './state.js';
-import { palette, material, mesh, sphere, heart, star } from './geometry.js';
+import { palette, material, mesh, sphere, star } from './geometry.js';
 
 export function createCake(scene) {
   const root = new THREE.Group();
@@ -58,7 +58,7 @@ export function createCake(scene) {
   }
   for (let i = 0; i < 6; i++) {
     const a = -Math.PI / 2 + (i / 5) * Math.PI;
-    const ornament = heart(0.1, forest, root, [Math.sin(a) * 0.96, 0.87, Math.cos(a) * 0.96]);
+    const ornament = star(0.065, forest, root, [Math.sin(a) * 0.96, 0.87, Math.cos(a) * 0.96]);
     ornament.rotation.y = a;
   }
 

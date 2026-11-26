@@ -33,7 +33,7 @@ export function createGift(scene) {
   tag.rotation.z = -0.17;
   root.add(tag);
   roundedBox([0.54, 0.43, 0.025], material(palette.cream), tag, [0, 0, 0], 0.045);
-  const text = mesh(new THREE.PlaneGeometry(0.5, 0.22), new THREE.MeshBasicMaterial({ map: svgTexture('for you', { width: 300, height: 120, fontSize: 60, italic: true }), transparent: true }), tag, [0, 0, 0.018]);
+  const text = mesh(new THREE.PlaneGeometry(0.5, 0.22), new THREE.MeshBasicMaterial({ map: svgTexture('LEVEL 18', { width: 300, height: 120, fontSize: 45 }), transparent: true }), tag, [0, 0, 0.018]);
   text.castShadow = false;
   tube([[0.48, 1.39, 0.75], [0.36, 1.14, 0.78], [0.48, 1.02, 0.79]], 0.01, ribbon, root, 16);
 

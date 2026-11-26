@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { state, on } from './state.js';
-import { palette, material, mesh, roundedBox, heart, svgTexture } from './geometry.js';
+import { palette, material, mesh, roundedBox, star, svgTexture } from './geometry.js';
 
 export function createPortrait(scene, manager) {
   const root = new THREE.Group();
@@ -18,11 +18,11 @@ export function createPortrait(scene, manager) {
   texture.offset.set(0.275, 0.17);
   const photograph = mesh(new THREE.PlaneGeometry(1.68, 1.91), new THREE.MeshBasicMaterial({ map: texture }), root, [0, 0.12, 0.057]);
   photograph.castShadow = false;
-  const caption = mesh(new THREE.PlaneGeometry(1.7, 0.28), new THREE.MeshBasicMaterial({ map: svgTexture('birthday girl ♡', { italic: true }), transparent: true, depthWrite: false }), root, [0, -1.015, 0.06]);
+  const caption = mesh(new THREE.PlaneGeometry(1.7, 0.28), new THREE.MeshBasicMaterial({ map: svgTexture('Quỳnh Anh · 18', { italic: false }), transparent: true, depthWrite: false }), root, [0, -1.015, 0.06]);
   caption.castShadow = false;
   const tape = roundedBox([0.58, 0.23, 0.025], material('#c6c5ae', { transparent: true, opacity: 0.78, roughness: 0.9 }), root, [0.1, 1.2, 0.07], 0.012);
   tape.rotation.z = 0.14;
-  const sticker = heart(0.22, material(palette.forest, { metalness: 0.05, roughness: 0.72 }), root, [0.78, -0.87, 0.13]);
+  const sticker = star(0.14, material(palette.forest, { metalness: 0.05, roughness: 0.72 }), root, [0.78, -0.87, 0.13]);
   sticker.rotation.z = -0.16;
   const back = roundedBox([1.1, 1.7, 0.09], material('#b7c0b1'), root, [0, -0.08, -0.25], 0.025);
   back.rotation.x = -0.28;

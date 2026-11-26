@@ -24,7 +24,7 @@ export function createUI(music) {
     toastTimer = setTimeout(() => toastElement.classList.remove('visible'), 3400);
   }
   function openLetter() {
-    if (state.phase === 'wrapped') { toast('Mở quà trước nha, em guộc ♡'); return; }
+    if (state.phase === 'wrapped') { toast('Mở quà trước nha, em guộc!'); return; }
     if (!dialog.open) dialog.showModal();
   }
   function closeLetter() { dialog.close(); letterButton.focus(); }
@@ -61,28 +61,28 @@ export function createUI(music) {
       el.classList.toggle('done', i < stage);
     });
     if (phase === 'wrapped') {
-      eyebrow.textContent = 'A LITTLE SURPRISE, JUST FOR YOU';
+      eyebrow.textContent = 'SINH NHẬT EM GÁI · LEVEL 18';
       title.textContent = 'Ê, em guộc!';
-      text.textContent = 'Có một bất ngờ nho nhỏ dành cho Quỳnh Anh.';
-      hint.textContent = 'Hôm nay nhân vật chính là em đó ♡';
+      text.textContent = 'Anh có quà sinh nhật cho em nè.';
+      hint.textContent = '18 rồi nhé. Mở quà thôi!';
       label.textContent = 'Mở quà & bật nhạc';
     } else if (phase === 'opening') {
-      eyebrow.textContent = 'SURPRISE!';
-      title.textContent = 'Nhân vật chính xuất hiện!';
-      text.textContent = 'Một chiếc bánh, một điều ước, một tuổi mới.';
-      hint.textContent = 'Dành riêng cho em guộc Quỳnh Anh ♡';
+      eyebrow.textContent = 'QUÀ TỚI RỒI!';
+      title.textContent = 'Bánh của em đây!';
+      text.textContent = 'Bánh 18 tuổi, khỏi đếm nến cho mệt.';
+      hint.textContent = 'Ước một điều rồi thổi nến nha.';
       label.textContent = 'Ú òa…';
     } else if (phase === 'wish') {
-      eyebrow.textContent = 'MAKE A WISH, BIRTHDAY GIRL';
+      eyebrow.textContent = 'QUỲNH ANH · LEVEL 18';
       title.textContent = 'Chúc em guộc Quỳnh Anh';
-      text.textContent = 'Tuổi 18 lớn hơn tuổi 17 ✨';
+      text.textContent = 'Tuổi 18 lớn hơn tuổi 17 🎂';
       hint.textContent = 'Nhắm mắt, ước một điều. Rồi thổi nến nào!';
       label.textContent = 'Ước xong rồi · thổi nến';
     } else {
-      eyebrow.textContent = 'HELLO EIGHTEEN, HELLO NEW MAGIC';
-      title.textContent = 'Tuổi 18, cứ rực rỡ nha!';
-      text.textContent = copy.greeting + ' ♡';
-      hint.textContent = 'Mong mọi điều dễ thương sẽ tìm đến em.';
+      eyebrow.textContent = 'CHÍNH THỨC LÊN LEVEL 18';
+      title.textContent = 'Sinh nhật vui vẻ, em gái!';
+      text.textContent = copy.greeting + '!';
+      hint.textContent = 'Tuổi mới khỏe, vui, học hành ổn áp nha.';
       label.textContent = 'Bung pháo giấy nữa';
     }
   }
@@ -90,10 +90,10 @@ export function createUI(music) {
   on('music', playing => {
     if (state.phase === 'wrapped') label.textContent = playing ? 'Mở quà sinh nhật' : 'Mở quà & bật nhạc';
   });
-  on('photo', () => { if (state.phase === 'wrapped') toast('Quỳnh Anh — cô gái của ngày hôm nay ♡'); else openLetter(); });
+  on('photo', () => { if (state.phase === 'wrapped') toast('Quỳnh Anh · hôm nay lên 18!'); else openLetter(); });
   on('celebrate', () => {
     if (navigator.vibrate) navigator.vibrate([30, 40, 50]);
-    toast('Điều ước đã được gửi tới vũ trụ ✨');
+    toast('Nến tắt rồi. Sinh nhật vui vẻ nha! 🎉');
   });
   updatePhase(state.phase);
   return { toast, primaryAction, openLetter, dispatchPhoto: () => emit('photo') };

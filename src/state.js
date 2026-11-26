@@ -3,8 +3,8 @@ export const copy = Object.freeze({
   greeting: 'Chúc em guộc Quỳnh Anh tuổi 18 lớn hơn tuổi 17',
   letter: [
     'Chúc em guộc Quỳnh Anh tuổi 18 lớn hơn tuổi 17.',
-    'Thêm một tuổi, thêm nhiều niềm vui, thêm nhiều điều dễ thương. Mong em luôn cười tươi như trong tấm ảnh này, làm điều mình thích và gặp thật nhiều người thương mình.',
-    'Tuổi 18 cứ rực rỡ theo cách của em nha. Còn hôm nay thì… ước một điều, ăn bánh và nhận quà thôi! 🎂',
+    'Anh chúc em tuổi mới khỏe mạnh, học hành thuận lợi, ăn ngon ngủ ngon và làm được những điều em thích.',
+    'Lớn thêm một tuổi rồi, nhớ chăm sóc bản thân nha. Hôm nay cứ ăn bánh, nhận quà và vui hết cỡ. Sinh nhật vui vẻ, em gái! 🎂',
   ],
 });
 
