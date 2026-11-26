@@ -87,6 +87,9 @@ export function createUI(music) {
     }
   }
   on('phase', updatePhase);
+  on('music', playing => {
+    if (state.phase === 'wrapped') label.textContent = playing ? 'Mở quà sinh nhật' : 'Mở quà & bật nhạc';
+  });
   on('photo', () => { if (state.phase === 'wrapped') toast('Quỳnh Anh — cô gái của ngày hôm nay ♡'); else openLetter(); });
   on('celebrate', () => {
     if (navigator.vibrate) navigator.vibrate([30, 40, 50]);

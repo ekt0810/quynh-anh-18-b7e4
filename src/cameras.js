@@ -28,7 +28,7 @@ export function createCamera(renderer) {
     camera.position.lerp(target, immediate ? 1 : 1 - Math.exp(-state.delta * 3));
     camera.lookAt(aim);
     // Move the projected scene up, keeping the bottom controls off the cake.
-    const offsetY = portrait ? (document.body.classList.contains('music-visible') ? -0.075 : 0.055) : 0.025;
+    const offsetY = portrait ? 0.055 : 0.025;
     camera.setViewOffset(state.viewport.width, state.viewport.height, 0, state.viewport.height * offsetY, state.viewport.width, state.viewport.height);
   }
   resize();

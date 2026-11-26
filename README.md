@@ -1,6 +1,6 @@
 # Quỳnh Anh · Hello tuổi 18
 
-Trang sinh nhật cá nhân với ảnh gốc, hộp quà 3D, bánh kem hai tầng, nến số 18, bóng bay, pháo giấy, lời chúc và bài PHONECERT (Vietnamese Version) của Hoàng Dũng qua trình phát YouTube chính thức.
+Trang sinh nhật cá nhân với ảnh gốc, hộp quà 3D, bánh kem hai tầng, nến số 18, bóng bay, pháo giấy, lời chúc và bản cắt 64 giây PHONECERT (Vietnamese Version) của Hoàng Dũng, phát trực tiếp bằng HTML Audio.
 
 ## Chạy trên máy
 
@@ -31,6 +31,6 @@ Thư mục `dist` chứa bản tĩnh hoàn chỉnh, có thể phục vụ bằng
 - `src/ui.js`: nút điều khiển, thư và lời chúc.
 - `src/main.js`: khởi tạo và vòng lặp 3D.
 
-Trang thử tự phát nhạc có tiếng. Nếu trình duyệt chặn, thao tác Mở quà sẽ thử bật lại; người xem cũng có thể chạm Play trong trình phát. Nhạc cần kết nối được YouTube. Đóng trình phát sẽ dừng nhạc.
+Trang thử tự phát nhạc có tiếng. Nếu trình duyệt chặn, chạm Mở quà hoặc nút nhạc sẽ bật nhạc. Nhạc lặp lại, có fade vào/ra, không cần kết nối YouTube và không có khung video. Nút nhạc bật/tắt âm thanh.
 
-Ảnh cá nhân do người dùng cung cấp; không cấp quyền tái sử dụng ảnh. Bài hát được nhúng từ kênh nghệ sĩ, không lưu hoặc phân phối file âm thanh.
+Ảnh cá nhân do người dùng cung cấp. Nhạc được cắt theo yêu cầu từ liên kết https://www.youtube.com/watch?v=WO7qdqdXeBU, đoạn 00:24–01:28, giữ nguyên tốc độ và cao độ, fade vào 1,2 giây và fade ra 2,5 giây. Bản MP3 stereo 44,1 kHz / 160 kbps nằm tại `public/phonecert-birthday.mp3`. Quyền đối với ảnh và bài hát thuộc các chủ sở hữu tương ứng; dự án không cấp quyền tái sử dụng các tài sản này.
