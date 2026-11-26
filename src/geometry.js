@@ -1,9 +1,9 @@
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 
-export const palette = { cream: 0xfff6e5, pink: 0xf7a9bb, rose: 0xd6587b, berry: 0x9b3156, gold: 0xeac17c, lilac: 0xc4b5e8, mint: 0xb0d5c3 };
+export const palette = { cream: 0xf3f0e7, sage: 0xa7b8a7, forest: 0x38574b, ink: 0x283b33, sand: 0xc5b995, slate: 0x8c9da1, mist: 0xc9d0bf };
 export function material(color, options = {}) {
-  return new THREE.MeshStandardMaterial({ color, roughness: 0.48, metalness: 0, ...options });
+  return new THREE.MeshStandardMaterial({ color, roughness: 0.62, metalness: 0, ...options });
 }
 export function mesh(geometry, mat, parent, position = [0, 0, 0]) {
   const object = new THREE.Mesh(geometry, mat);
@@ -54,7 +54,7 @@ export function star(size, mat, parent, position = [0, 0, 0]) {
   return result;
 }
 
-export function svgTexture(text, { width = 640, height = 140, color = '#984763', fontSize = 54, italic = false } = {}) {
+export function svgTexture(text, { width = 640, height = 140, color = '#425b4c', fontSize = 54, italic = false } = {}) {
   const safeText = text.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="${color}" font-family="Georgia,serif" font-size="${fontSize}" font-style="${italic ? 'italic' : 'normal'}">${safeText}</text></svg>`;
   const texture = new THREE.TextureLoader().load(`data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`);

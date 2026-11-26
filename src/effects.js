@@ -5,13 +5,13 @@ import { palette } from './geometry.js';
 export function createEffects(scene) {
   const count = state.viewport.mobile ? 240 : 430;
   const geometry = new THREE.PlaneGeometry(0.07, 0.13);
-  const mat = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, roughness: 0.45, metalness: 0.12 });
+  const mat = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, roughness: 0.72, metalness: 0.03 });
   const pieces = new THREE.InstancedMesh(geometry, mat, count);
   pieces.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
   pieces.frustumCulled = false;
   scene.add(pieces);
   const dummy = new THREE.Object3D();
-  const colors = [palette.rose, palette.gold, palette.mint, palette.lilac, palette.cream].map(c => new THREE.Color(c));
+  const colors = [palette.forest, palette.sand, palette.mist, palette.slate, palette.cream].map(c => new THREE.Color(c));
   const particles = Array.from({ length: count }, (_, i) => ({
     position: new THREE.Vector3(), velocity: new THREE.Vector3(),
     rotation: new THREE.Euler(), spin: new THREE.Vector3(), life: 0, seed: i * 0.53,
@@ -51,7 +51,7 @@ export function createEffects(scene) {
   }
   const dustGeometry = new THREE.BufferGeometry();
   dustGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  const dust = new THREE.Points(dustGeometry, new THREE.PointsMaterial({ color: '#fffdf0', size: 0.042, transparent: true, opacity: 0.8, depthWrite: false }));
+  const dust = new THREE.Points(dustGeometry, new THREE.PointsMaterial({ color: '#f8f9f2', size: 0.042, transparent: true, opacity: 0.65, depthWrite: false }));
   scene.add(dust);
 
   return {

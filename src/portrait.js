@@ -9,7 +9,7 @@ export function createPortrait(scene, manager) {
   root.rotation.y = -0.11;
   scene.add(root);
 
-  const paper = material('#fffaf0', { roughness: 0.82 });
+  const paper = material('#faf9f3', { roughness: 0.82 });
   roundedBox([1.92, 2.46, 0.1], paper, root, [0, 0, 0], 0.06);
   const texture = new THREE.TextureLoader(manager).load('./quynh-anh.png');
   texture.colorSpace = THREE.SRGBColorSpace;
@@ -20,11 +20,11 @@ export function createPortrait(scene, manager) {
   photograph.castShadow = false;
   const caption = mesh(new THREE.PlaneGeometry(1.7, 0.28), new THREE.MeshBasicMaterial({ map: svgTexture('birthday girl ♡', { italic: true }), transparent: true, depthWrite: false }), root, [0, -1.015, 0.06]);
   caption.castShadow = false;
-  const tape = roundedBox([0.58, 0.23, 0.025], material('#e3cf9e', { transparent: true, opacity: 0.78, roughness: 0.9 }), root, [0.1, 1.2, 0.07], 0.012);
+  const tape = roundedBox([0.58, 0.23, 0.025], material('#c6c5ae', { transparent: true, opacity: 0.78, roughness: 0.9 }), root, [0.1, 1.2, 0.07], 0.012);
   tape.rotation.z = 0.14;
-  const sticker = heart(0.22, material(palette.rose, { metalness: 0.3 }), root, [0.78, -0.87, 0.13]);
+  const sticker = heart(0.22, material(palette.forest, { metalness: 0.05, roughness: 0.72 }), root, [0.78, -0.87, 0.13]);
   sticker.rotation.z = -0.16;
-  const back = roundedBox([1.1, 1.7, 0.09], material('#d8b8bf'), root, [0, -0.08, -0.25], 0.025);
+  const back = roundedBox([1.1, 1.7, 0.09], material('#b7c0b1'), root, [0, -0.08, -0.25], 0.025);
   back.rotation.x = -0.28;
 
   photograph.userData.action = 'photo';

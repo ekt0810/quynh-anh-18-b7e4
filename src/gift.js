@@ -5,21 +5,21 @@ import { palette, material, mesh, roundedBox, tube, svgTexture } from './geometr
 export function createGift(scene) {
   const root = new THREE.Group();
   scene.add(root);
-  const pink = material('#da7093', { roughness: 0.38 });
-  const ribbon = material('#f8ddb0', { metalness: 0.28, roughness: 0.32 });
-  const inner = material('#eeb3c5', { roughness: 0.7 });
+  const wrapping = material(palette.forest, { roughness: 0.74 });
+  const ribbon = material(palette.cream, { metalness: 0.05, roughness: 0.65 });
+  const inner = material(palette.sage, { roughness: 0.8 });
 
   // Four walls and an inset base leave a real cavity beneath the hinged lid.
   roundedBox([1.7, 0.12, 1.5], inner, root, [0, 0.06, 0]);
-  for (const z of [-0.7, 0.7]) roundedBox([1.7, 1.25, 0.1], pink, root, [0, 0.69, z]);
-  for (const x of [-0.8, 0.8]) roundedBox([0.1, 1.25, 1.4], pink, root, [x, 0.69, 0]);
+  for (const z of [-0.7, 0.7]) roundedBox([1.7, 1.25, 0.1], wrapping, root, [0, 0.69, z]);
+  for (const x of [-0.8, 0.8]) roundedBox([0.1, 1.25, 1.4], wrapping, root, [x, 0.69, 0]);
   for (const z of [-0.758, 0.758]) roundedBox([0.23, 1.26, 0.016], ribbon, root, [0, 0.69, z], 0.006);
   for (const x of [-0.858, 0.858]) roundedBox([0.016, 1.26, 0.23], ribbon, root, [x, 0.69, 0], 0.006);
 
   const lid = new THREE.Group();
   lid.position.y = 1.4;
   root.add(lid);
-  roundedBox([1.82, 0.24, 1.62], pink, lid, [0, 0, 0]);
+  roundedBox([1.82, 0.24, 1.62], wrapping, lid, [0, 0, 0]);
   roundedBox([0.25, 0.025, 1.65], ribbon, lid, [0, 0.135, 0], 0.008);
   roundedBox([1.84, 0.025, 0.25], ribbon, lid, [0, 0.137, 0], 0.008);
   for (const side of [-1, 1]) {
