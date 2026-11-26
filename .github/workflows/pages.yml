@@ -2,7 +2,7 @@ name: Publish birthday website
 
 on:
   push:
-    branches: [codex/birthday-18]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
